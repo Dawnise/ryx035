@@ -1,0 +1,146 @@
+/* styles.css */
+html, body {
+    height: 100%;
+    overflow-y: auto; /* 确保有垂直滚动条 */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto; /* 居中显示 */
+    min-height: 100%; /* 确保容器高度至少为 100% */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative; /* 确保不是 fixed 或 absolute */
+}
+
+header .page-title {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+
+header button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    flex: 1; /* 确保 main 占据剩余空间 */
+    overflow-y: auto; /* 确保 main 内容可以滚动 */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5列 */
+    grid-template-rows: repeat(4, 1fr); /* 4行 */
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+    transform: scale(1.1);
+}
+
+.product-card h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.product-card p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    position: relative; /* 确保不是 fixed 或 absolute */
+}
+
+footer button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #0056b3;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.home-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.bottom-right-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}

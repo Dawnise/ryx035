@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件格式转换Tool</title>
+    <link rel="stylesheet" href="page_4.css">
+</head>
+<body>
+    <header>
+        <a href="real_index.html" class="home-button">返回主页</a>
+    </header>
+    <div class="container">
+        <header>
+            <h1>文件格式转换器</h1>
+        </header>
+        <main>
+            <section class="file-input-section">
+                <h2>图片文件转换</h2>
+                <input type="file" id="image-file" accept="image/*">
+                <button onclick="convertImage()">转换为 JPG</button>
+                <a id="download-image-link" style="display: none;">下载转换后的图片</a>
+            </section>
+
+            <section class="file-input-section">
+                <h2>文本文件转换</h2>
+                <input type="file" id="text-file" accept=".docx, .txt">
+                <button onclick="convertText()">转换为 DOCX</button>
+                <a id="download-text-link" style="display: none;">下载转换后的文档</a>
+            </section>
+
+            <section class="preview-section">
+                <h2>文件预览</h2>
+                <textarea id="text-preview" rows="10" cols="50" placeholder="文本内容预览" readonly></textarea>
+                <img id="image-preview" src="" alt="图片预览" style="max-width: 100%; display: none;">
+            </section>
+        </main>
+        <div class="bottom-right-button">
+            <a href="page_3.html" class="home-button">上一页</a>
+        </div>
+    </div>
+
+    <script src="page_4.js"></script>
+</body>
+</html>

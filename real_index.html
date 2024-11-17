@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U202490035</title>
+    <link rel="stylesheet" href="Index.css">
+   
+</head>
+<body>
+
+    <a href="page_224.html">
+        <button class="top-left-button" onclick="alert('Success! \n你真的要回宿舍嗎QaQ')">返回宿舍</button>
+    </a>
+
+   
+    <div class="container">
+        <div class="top-section">
+            <div class="image-slider">
+                <div class="slides">
+                    <a href=""></a>
+                    <a href="https://v.qq.com/x/cover/p7r69872jb8hg3u/v0026plpbdr.html?ptag=bing.com"><img src="image1.jpg" alt="Image 1" class="slide"></a>
+                    <a href="https://www.bilibili.com/video/BV1hgeEeUEmj?spm_id_from=333.788.recommend_more_video.0&vd_source=ccbd2377ac23473df9ad4ee7a05f9c7b"> <img src="image2.jpg" alt="Image 2" class="slide"></a>
+                    <a href="https://www.bilibili.com/video/BV1U3411t7b5/?spm_id_from=333.337.search-card.all.click"> <img src="image3.jpg" alt="Image 3" class="slide"></a>
+                    <a href="https://www.bilibili.com/video/BV1qL4y1g7u8?spm_id_from=333.788.recommend_more_video.-1&vd_source=ccbd2377ac23473df9ad4ee7a05f9c7b"> <img src="image4.jpg" alt="Image 4" class="slide"></a>
+                    <a href="https://www.bilibili.com/video/BV1dW4y1R7M3/?spm_id_from=333.337.search-card.all.click"> <img src="image5.jpg" alt="Image 5" class="slide"></a>
+                </div>
+                <button class="arrow left-arrow" onclick="prevSlide()">&#10094;</button>
+                <button class="arrow right-arrow" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="date-text">
+                    <p class="date" style="font-size: 30px;" id="date"></p>
+            <script>
+                const today = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                document.getElementById('date').textContent = today.toLocaleDateString('zh-CN', options);
+            </script></p>
+                    <p class="text">你己成功進入頻道 <br>左上角按鈕可回宿舍，下方可移步其他分頁，其他內容可能帶有彩蛋惊喜</p><br><br>*注：若不能成功顯示請設定示窗比例為70-80%左右
+                </div>
+            </div>
+            <div class="middle-section">
+                <div class="left-sidebar">
+                    <p>編制日期:2024.11.08 <br><br>這是一個專門為男性成人愛好的網站，當中包含但不限於「男人玩物四部曲」、「荒野求生」、「钓魚」、「70年代懷舊產物」等，望來到這的朋友能夠憶起兒時不曾珍惜過的風景</p>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="Chess.mp4" type="video/webm">
+                        您的浏览器不支持 video 标签。
+                    </video>
+                </div>
+                <div class="right-sidebar">
+                    <div class="marquee-content">
+                        <p>右侧简介文本</p>
+                        <p>2025十大男歌手</p>
+                        <p>1.姜涛</p>
+                        <p>更多内容...</p>
+                        <p>更多内容...</p>
+                        <p>更多内容...</p>
+                        <p>更多内容...</p>
+                        <p>更多内容...</p>
+                        <p>更多内容...</p>
+                        <p>更多内容...</p>
+                        <p>更多内容...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right-place">
+        <div class="bottom-right-botton">
+            <a href="page_1.html">
+                <button class="home-button">跳转到页面1</button>
+            </a>
+            <a href="page_2.html">
+                <button class="home-button">跳转到页面2</button>
+            </a>
+            <a href="page_3.html">
+                <button class="home-button">跳转到页面3</button>
+            </a>
+            <a href="page_4.html">
+                <button class="home-button">跳转到页面4</button>
+            </a>
+        </div>
+        <script src="index.js"></script>
+    </div>
+    
+</body>
+</html>

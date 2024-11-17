@@ -1,0 +1,93 @@
+/* 广告模态框 */
+.ad-modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+.top-left-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* 广告内容 */
+.ad-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+/* 关闭按钮 */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+/* 广告按钮 */
+.ad-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.ad-button:hover {
+    background-color: #0056b3;
+}
+
+
+.home-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.bottom-right-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}

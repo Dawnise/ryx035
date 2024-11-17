@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>男人玩物四部曲</title>
+    <style>
+        /* 页面基本样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            left: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 唱片机 */
+        .turntable {
+            width: 300px;
+            height: 300px;
+            background: url('https://gd-hbimg.huaban.com/492dadd0736cd90ef9ce98e99c163232a0cbde3921715-pRWWQP_fw658') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: rotate 10s linear infinite;
+        }
+
+        /* 控制按钮 */
+        .control-buttons {
+            margin-top: 20px;
+        }
+
+        .control-buttons button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .control-buttons button:hover {
+            background-color: #555;
+        }
+
+        /* 文本介绍 */
+        .text-intro {
+            position: absolute;
+            left: 150px;
+            top: 30%;
+            transform: translateY(-50%);
+            width: 300px;
+            text-align: left;
+        }
+
+        .song-info {
+            position: absolute;
+            right: 150px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            text-align: left;
+        }
+
+        /* 动画 */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="text-intro">
+        <a href="real_index.html">
+            <button class="top-left-button" onclick="alert('听完再走吧')">返回主頁</button>
+        </a>
+        <a href="page_1.html">
+            <button class="bottom-right-button" onclick="alert('听完再走吧')">上一页</button>
+        </a>
+        <a href="page_3.html">
+            <button class="bottom-right-button" onclick="alert('跳转失败，请支付VIP离开！')">下一页</button>
+        </a>
+        
+        <h2>网页主题介绍<br>默认暂停播放音乐，请点击中间按钮以试听</h2>
+        <p>欢迎来到我们的音乐播放平台。在这里，你可以欣赏到各种风格的音乐，感受不同的情感和氛围。我们精心挑选了四首经典曲目，希望能给你带来美好的听觉体验。</p>
+    </div>
+    <div class="main-content">
+      
+        <div class="turntable"></div>
+        
+        <div class="control-buttons">
+            <button id="prev-song">上一首</button>
+            <button id="play-pause">播放</button>
+            <button id="next-song">下一首</button>
+
+        </div>
+    </div>
+    <div class="song-info" id="song-info">
+        <h2>Song 1</h2>
+        <p>这是第一首歌曲的介绍。这首歌曲以其优美的旋律和深情的歌词，赢得了广大听众的喜爱。</p>
+        
+    </div>
+    
+
+
+    <audio id="audio-player" controls style="display: none;">
+        <source src="song1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const songs = [
+            { title: 'Song 1', src: 'song1.mp3', info: '这是balabala第一首歌曲的介绍。这首歌曲以其优美的旋律和深情的歌词，赢得了广大听众的喜爱。' },
+            { title: 'Song 2', src: 'song2.mp3', info: '这是balabala第二首歌曲的介绍。这首歌曲节奏明快，充满活力，适合在运动时聆听。' },
+            { title: 'Song 3', src: 'song3.mp3', info: '这是balabala第三首歌曲的介绍。这首歌曲旋律悠扬，让人感到宁静和平静。' },
+            { title: 'Song 4', src: 'song4.mp3', info: '这是balabala第四首歌曲的介绍。这首歌曲情感丰富，歌词深刻，值得细细品味。' }
+        ];
+
+        let currentSongIndex = 0;
+        const audioPlayer = document.getElementById('audio-player');
+        const prevButton = document.getElementById('prev-song');
+        const playPauseButton = document.getElementById('play-pause');
+        const nextButton = document.getElementById('next-song');
+        const songInfoDiv = document.getElementById('song-info');
+
+        function loadSong(index) {
+            const song = songs[index];
+            audioPlayer.src = song.src;
+            audioPlayer.play();
+            updateSongInfo(song);
+        }
+
+        function updateSongInfo(song) {
+            songInfoDiv.innerHTML = `
+                <h2>${song.title}</h2>
+                <p>${song.info}</p>
+            `;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong(currentSongIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+        });
+
+        playPauseButton.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseButton.textContent = '暂停';
+                document.querySelector('.turntable').style.animationPlayState = 'running';
+            } else {
+                audioPlayer.pause();
+                playPauseButton.textContent = '播放';
+                document.querySelector('.turntable').style.animationPlayState = 'paused';
+            }
+        });
+
+        // 加载第一首歌
+        loadSong(currentSongIndex);
+    </script>
+</body>
+</html>

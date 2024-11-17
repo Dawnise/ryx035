@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄像头背景网站</title>
+    <link rel="stylesheet" href="temp.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>摄像头背景网站</h1>
+        </header>
+        <main>
+            <button id="start-camera">启动摄像头</button>
+            <button id="stop-camera" style="display: none;">停止摄像头</button>
+            <div id="error-message" style="color: red; display: none;"></div>
+        </main>
+    </div>
+    <video id="background-video" autoplay muted playsinline style="display: none;"></video>
+    <img id="fallback-background" src="fallback.jpg" alt="备用背景" style="display: block;">
+
+    <script src="temp.js"></script>
+</body>
+</html>
