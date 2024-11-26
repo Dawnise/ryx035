@@ -1,23 +1,34 @@
+// index.js
 let slideIndex = 0;
+showSlides();
 
-function showSlides(n) {
+function showSlides() {
     const slides = document.querySelectorAll('.slide');
-    if (n >= slides.length) { slideIndex = 0; }
-    if (n < 0) { slideIndex = slides.length - 1; }
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].style.display = "none"; 
     }
-    slides[slideIndex].style.display = "block";
-    slideIndex += n;
-}
-
-function nextSlide() {
-    showSlides(slideIndex + 1);
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 } 
+    slides[slideIndex - 1].style.display = "block"; 
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
 
 function prevSlide() {
-    showSlides(slideIndex - 1);
+    slideIndex--;
+    if (slideIndex < 1) { slideIndex = slides.length }
+    showSlide(slideIndex);
 }
 
-// 初始化显示第一张图片
-showSlides(slideIndex);
+function nextSlide() {
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    showSlide(slideIndex);
+}
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slides[index - 1].style.display = "block"; 
+}
